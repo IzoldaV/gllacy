@@ -1,0 +1,99 @@
+.catalog-products {
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  grid-gap: 020px;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 1150px) {
+    grid-gap: 0;
+  }
+
+  &__item {
+    position: relative;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+
+    .products-item__wrapper {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      border-radius: 0 0 5px 5px;
+    }
+
+    &:hover {
+      background: rgba(255,255,255,0.2);
+
+      .products-item__wrapper {
+        background: rgba(255,255,255,0.2);
+        z-index: 3;
+      }
+
+      .products__item-btn {
+        display: block;
+        z-index: 3;
+        margin: 0 auto 10px;
+      }
+    }
+
+    .catalog-products__item-info {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      width: 200px;
+      height: 200px;
+
+      @media screen and (min-width: 1200px) {
+        width: 267px;
+        height: 267px;
+      }
+    }
+
+    .item-img {
+      width: 100%;
+    }
+    .item-price {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      font-size: 45px;
+      font-weight: 700;
+      line-height: 45px;
+
+      .item-price--rouble {
+        margin-left: -5px;
+        font-size: 43px;
+        font-weight: 400;
+      }
+      .item-price--kg {
+        margin-left: -10px;
+        font-size: 30px;
+      }
+    }
+    .item-title {
+      position: relative;
+      text-align: center;
+    }
+
+    .item-title--link {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 22px;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .products__item-btn {
+      display: none;
+    }
+  }
+}

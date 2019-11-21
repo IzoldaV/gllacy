@@ -1,0 +1,21 @@
+.filter__block-select {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  height: 37px;
+  min-width: 195px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 20px;
+}
+.filter__select {
+  color: #fff;
+  background: #aabcb2;
+  border: none;
+  margin-left: 15px;
+  margin-right: 10px;
+  outline: none;
+
+  &:hover {
+    color: black;
+  }
+}

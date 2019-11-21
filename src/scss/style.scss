@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+// Миксины, переменные, хелперы и т.д.
+@import "utils/**/*.scss";
+
+// Вендорные CSS
+@import "vendors/**/*.scss";
+
+// Импорт основных стилей
+@import "base/**/*.scss";
+
+// Блоки
+@import "layout/**/*.scss";
+
+// Модули
+@import "modules/**/*.scss";
+
+//Страницы
+@import "pages/**/*.scss";
+
+
+/* ============= */
