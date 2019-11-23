@@ -83,10 +83,16 @@ const catalog = () => {
 	})
 }
 
-if (location.pathname === "/") {
+console.table({
+	location,
+	isMain: location.pathname === "/",
+	isCatalog: location.pathname === "/catalog.html"
+})
+
+if (location.pathname.endsWith("index.html") || !location.pathname.match(/.+\.html$/g)) {
 	main()
 }
-if (location.pathname === "/catalog.html") {
+if (location.pathname.endsWith("/catalog.html")) {
 	catalog()
 }
 
