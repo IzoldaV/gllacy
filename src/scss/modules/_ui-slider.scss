@@ -10,13 +10,15 @@
     display: flex;
   }
   &__dots {
-    display: flex;
-    margin-right: auto;
-    justify-content: space-between;
-    max-width: 80px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
+		display: flex;
+		min-width: 80px;
+		margin-right: auto;
+		justify-content: space-between;
+		max-width: 80px;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 25px;
   }
 
   .slide {
@@ -64,6 +66,4 @@
       }
     }
   }
-
-
 }
