@@ -4,6 +4,7 @@ class Slider {
       arrows: false,
       dots: true,
       backgrounds: [],
+			titles: [],
       items: 1
     };
     if (!el) {
@@ -23,6 +24,7 @@ class Slider {
       this._createDots();
     }
     this._createBackgrounds(this.activeIndex);
+		this._createTitleSlide(this.activeIndex)
   }
 
   _create() {
@@ -63,7 +65,7 @@ class Slider {
 
     const fragment = document.createDocumentFragment();
 
-    this.slides.forEach((slide, index) => { 
+    this.slides.forEach((slide, index) => {
       const dot = document.createElement('SPAN');
       dot.classList.add('ui-slider__dot');
       dot.addEventListener('click', function (e) {
@@ -73,6 +75,7 @@ class Slider {
         e.target.classList.add('ui-slider__dot--active');
         this.activeIndex = index
         this._createBackgrounds(index);
+				this._createTitleSlide(index)
       }.bind(this));
       fragment.appendChild(dot);
     });
@@ -88,6 +91,11 @@ class Slider {
     _body.classList.add('ui-slider__bg')
     _body.style.backgroundImage = `url(${this.options.backgrounds[index]})`;
   }
+
+	_createTitleSlide(index) {
+		const _titleOfSlide = document.querySelector('.slide-title')
+		_titleOfSlide.innerText = `${this.options.titles[index]}`
+	}
 }
 
 export default Slider;

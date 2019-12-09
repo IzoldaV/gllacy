@@ -63,8 +63,13 @@ const main = () => {
 	})
 
 	// Slider
-	new Slider(".slider", {
-		backgrounds: ["img/slide-1.png", "img/slide-2.png", "img/slide-3.png"]
+	new Slider('.slider', {
+		backgrounds: ['img/slide-1.png', 'img/slide-2.png', 'img/slide-3.png'],
+		titles: [
+			'Крем-брюле и пломбир с малиновым джемом',
+			'Шоколадный пломбир и лимонный сорбет',
+			'Пломбир с помадкой и клубничный щербет'
+		]
 	})
 }
 
