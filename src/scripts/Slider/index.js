@@ -23,7 +23,7 @@ class Slider {
     if (this.options.dots) {
       this._createDots();
     }
-    this._createBackgrounds(this.activeIndex);
+    this._createBackgrounds(this.activeIndex)
 		this._createTitleSlide(this.activeIndex)
   }
 
@@ -53,9 +53,7 @@ class Slider {
       item.parentNode.removeChild(item);
     });
 
-
     this.container.appendChild(wrapper);
-
   }
 
   _createDots() {
@@ -73,8 +71,8 @@ class Slider {
           item.classList.remove('ui-slider__dot--active');
         }
         e.target.classList.add('ui-slider__dot--active');
-        this.activeIndex = index
-        this._createBackgrounds(index);
+        this.activeIndex = index;
+        this._createBackgrounds(index)
 				this._createTitleSlide(index)
       }.bind(this));
       fragment.appendChild(dot);
@@ -92,9 +90,10 @@ class Slider {
     _body.style.backgroundImage = `url(${this.options.backgrounds[index]})`;
   }
 
-	_createTitleSlide(index) {
-		const _titleOfSlide = document.querySelector('.slide-title')
-		_titleOfSlide.innerText = `${this.options.titles[index]}`
+  _createTitleSlide(index) {
+  	const _titleSlide = document.querySelector('.slide-title')
+	//	_titleSlide.classList.add('.slide-title')
+		_titleSlide.innerText = `${this.options.titles[index]}`
 	}
 }
 

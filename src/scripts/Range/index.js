@@ -122,7 +122,15 @@ export default class Range {
 		const coords = e.touches ? e.touches[0].pageX - sliderLeft - handleWidth / 2 : e.pageX - sliderLeft - handleWidth / 2
 
 		const activeHandle = handles.active
-		handles[activeHandle].x = coords
+
+		if (activeHandle === 'min' && coords > handles.max.x) {
+			handles[activeHandle].x = handles.max.x
+		} else if (activeHandle === 'max' && coords < handles.min.x) {
+			handles[activeHandle].x = handles.min.x
+		} else {
+			handles[activeHandle].x = coords
+		}
+		console.table({handles})
 
 		this._setValues()
 	}
@@ -178,15 +186,17 @@ export default class Range {
 	}
 
 	_calcValues() {
-		const { handles, stepSize } = this.innerProps
+		const { handles, stepSize, values } = this.innerProps
 		const { min, step } = this.options
 
 		let innerMin = (handles.min.x * 100) / stepSize
 		innerMin = innerMin >= step ? innerMin : min
 
+		const newMin = Math.ceil(innerMin)
+		const newMax = Math.ceil((handles.max.x * 100) / stepSize)
 		this.innerProps.values = {
-			min: Math.ceil(innerMin),
-			max: Math.ceil((handles.max.x * 100) / stepSize)
+			min: newMin > values.max ? values.max : newMin,
+			max: newMax < values.min ? values.min : newMax
 		}
 	}
 
