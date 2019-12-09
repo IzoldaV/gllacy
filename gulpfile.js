@@ -130,11 +130,11 @@ gulp.task("webpack", callback => {
 			)
 		}
 
-		if (!options.watch && err) {
-			callback(err)
-		} else {
-			// callback();
-		}
+		// if (!options.watch && err) {
+		// 	callback(err)
+		// } else {
+		// 	// callback();
+		// }
 	})
 })
 

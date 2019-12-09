@@ -2,7 +2,7 @@
 
 import Slider from './Slider'
 import Range from './Range'
-import 'babel-polyfill'
+// import 'babel-polyfill'
 
 const main = () => {
 	// Map
