@@ -1,1 +1,1 @@
-A training project
+A training project with custom slider and range
